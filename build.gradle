@@ -46,6 +46,11 @@ dependencies {
 	compile 'javax.servlet:jstl:1.2'
 	compile 'javax.servlet.jsp.jstl:jstl-api:1.2'
 	
+	compile 'javax.servlet.jsp.jstl:jstl-api:1.2'
+     
+    compile 'javax.servlet:jstl:1.2'
+	
+	
 	//Esta dependência será usada no contexto de testes da aplicação
   	testImplementation('org.junit.jupiter:junit-jupiter:5.5.1')
   	testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.1")

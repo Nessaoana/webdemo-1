@@ -10,18 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-import webdemo.controllers.UsuariosController;
+import webdemo.controllers.ProdutosController;
 
-
-//@WebServlet("/usuarios")
-public class UsuariosServlet extends HttpServlet {
+//@WebServlet("/produtos")
+public class ProdutosServlet extends HttpServlet {
 
 	@Override	
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) 
 					throws IOException, ServletException {
 		
-		new UsuariosController(request, response)
+		new ProdutosController(request, response)
 			.list();
 	}
 	
@@ -37,7 +36,7 @@ public class UsuariosServlet extends HttpServlet {
 			formData.put(element, request.getParameter(element));
 		}
 		
-		new UsuariosController(request, response)
+		new ProdutosController(request, response)
 			.create(formData);
 	}				
 	

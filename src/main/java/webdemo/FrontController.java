@@ -1,10 +1,8 @@
 package webdemo;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,12 +14,10 @@ import com.google.common.base.Strings;
 
 import webdemo.controllers.Controller;
 import webdemo.controllers.ControllerFactory;
-import webdemo.controllers.UsuariosController;
-import webdemo.entidades.Usuario;
 
 import static org.apache.commons.lang3.RegExUtils.removeFirst;
 
-@WebServlet("/usuarios/*")
+@WebServlet({"/usuarios/*", "/produtos/*"})
 public class FrontController extends HttpServlet {
 
 	/**

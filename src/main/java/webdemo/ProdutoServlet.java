@@ -5,20 +5,20 @@ import java.util.Enumeration;
 import java.util.HashMap;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.common.base.Strings;
 
-import webdemo.controllers.UsuariosController;
-
-//TODO: Preciso adicionar uma rota para edi√ß√£o aqui /usuarios/editar?id=123 . Como fa√ßo isso?
-//@WebServlet(urlPatterns = {"/usuarios/novo", "/usuarios/editar"})
+import webdemo.controllers.ProdutosController;
 
 
-public class UsuarioServlet extends HttpServlet {
+//TODO: Preciso adicionar uma rota para ediÁ„o aqui /produtos/editar?id=123 . Como faz isso?
+//@WebServlet(urlPatterns = {"/produtos/novo", "/produtos/editar"})
+
+
+public class ProdutoServlet extends HttpServlet {
 	
 	@Override	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -26,7 +26,7 @@ public class UsuarioServlet extends HttpServlet {
 		
 		String[] path = request.getRequestURI().split("/");
 		
-		UsuariosController controller = new UsuariosController(request, response);
+		ProdutosController controller = new ProdutosController(request, response);
 		
 		if(path[2].startsWith("novo")){
 			controller.create();
@@ -60,7 +60,7 @@ public class UsuarioServlet extends HttpServlet {
 				formData.put(element, request.getParameter(element));
 			}
 			
-			new UsuariosController(request, response)
+			new ProdutosController(request, response)
 				.edit(Integer.parseInt(request.getParameter("id")), formData);
 		}
 	}
